@@ -1,0 +1,18 @@
+{
+    "name": "akim-bow/guzzle-proxy-handler",
+    "type": "library",
+    "description": "Middleware for GuzzleHTTP, allowing easy use of multiple proxy configs",
+    "homepage": "https://github.com/akim-bow/guzzle-proxy-handler",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ProxyHandler\\": "src"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}

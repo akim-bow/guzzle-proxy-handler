@@ -1,0 +1,12 @@
+{
+  "proxies": [
+    {
+      "url": "http://login:pass@ip:port",
+      "country": "russia"
+    },
+    {
+      "url": "https://www.google.com:59100",
+      "country": "ukraine"
+    }
+  ]
+}
