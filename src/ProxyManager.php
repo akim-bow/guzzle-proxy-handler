@@ -32,12 +32,10 @@ class ProxyManager {
         return function(callable $handler) use ($proxyStrategy) {
             return function(\Psr\Http\Message\RequestInterface $request, array &$options) use ($handler, $proxyStrategy) {
                 $proxy = $proxyStrategy->getNextProxy();
-                $options['proxy'] = $proxy->url;
-                print_r("Request with proxy: " . $proxy->url . "\n");
+                $options['proxy'] = $proxy;
 
                 return $handler($request, $options)->then(function(ResponseInterface $response) use ($proxy, $proxyStrategy) {
                     $proxyStrategy->afterResponse($response, $proxy);
-                    print_r("Response with proxy: " . $proxy->url . "\n");
                     return $response;
                 });
             };

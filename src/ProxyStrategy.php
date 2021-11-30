@@ -5,6 +5,6 @@ namespace ProxyHandler;
 use Psr\Http\Message\ResponseInterface;
 
 interface ProxyStrategy {
-    public function getNextProxy(): ProxyData;
-    public function afterResponse(ResponseInterface $response, ProxyData $proxy): void;
+    public function getNextProxy(): string;
+    public function afterResponse(ResponseInterface $response, string $proxy): void;
 }
